@@ -1,0 +1,26 @@
+<%= link_to 'Back to Main Page', usages_path %>
+<h1> Show Usage Table </h1>
+<p>
+  <strong>No of units used</strong>
+  <%= @usage.no_of_units_used%>
+</p>
+ 
+<p>
+  <strong>Month:</strong>
+  <%= @usage.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @usage.year %>
+</p>
+<p>
+  <strong>Feature ID:</strong>
+  <%=@usage.feature_id  %>
+</p>
+<p>
+  <strong>Subscription ID:</strong>
+  <%=@usage.subscription_id  %>
+</p>
+<p>
+<%= link_to 'Back', usages_path %>

@@ -1,0 +1,15 @@
+<%= form_with scope: :feature , local: true do |form| %>
+  <p>
+    <%= form.label :UserID %><br>
+    <%= form.text_field :userid %>
+  </p>
+ 
+  <p>
+    <%= form.label :FeatureID %><br>
+    <%= form.text_field :feature_id  %>
+  </p>
+    
+  <p>
+    <li><%= link_to 'Add Usages', new_usage_path %></li>
+  </p>
+<%end%>

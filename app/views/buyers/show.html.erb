@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Template by quackit.com -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>2 Column Frames Layout &mdash; Left Menu</title>
+		<%= stylesheet_link_tag 'buyers' %>
+	</head>
+	<body>		
+			
+		<main>
+			<div class="innertube">
+				<p id="notice"><%= notice %></p>
+				
+				  <%= link_to 'Sign Out' , new_user_session_path  %>	
+				
+				<h1>Welcome <%= current_user.username %> ID <%= current_user.id %>  </h1>
+         <li><a href="#">Plans</a></li> 
+				<table>
+        <tr>
+        <th>Name</th>
+        <th>Fee</th>
+        <th colspan="2"></th>
+        </tr>
+ 
+        <% @plans.each do |plan| %>
+        <tr>
+        <td><%= plan.name %></td>
+        <td><%= plan.fee %></td>
+        <td><%= link_to 'Subscribe', plan_subscriptions_path(plan) %></td>
+        </tr>
+        <% end %>
+        </table>
+			</div>
+		</main>
+	
+		<nav id="nav">
+			<div class="innertube">
+			<ul>
+				<td><%= link_to 'Show Transaction'%></td>
+				<li><a href="#">Logout</a></li>
+			</ul>
+			</div>
+		</nav>
+	
+	</body>
+</html>

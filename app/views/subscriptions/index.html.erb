@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing All Subscriptions</h1>
+ 
+
+<%= link_to 'New Subscriptions', new_plan_subscription_path(@plan.id) %>
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Plan ID</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @plan.subscriptions.each do |subscription| %>
+    <tr>
+      <td><%= subscription.user_id %></td>
+      <td><%= subscription.plan_id %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<li><%= link_to 'Back', buyers_path %></li>
+

@@ -1,0 +1,32 @@
+<h1>Edit Usage</h1>
+ 
+ <%= form_with(model: @usage, local: true) do |form| %>
+  <p>
+    <%= form.label :no_of_units_used %><br>
+    <%= form.text_field :no_of_units_used %>
+  </p>
+ 
+  <p>
+    <%= form.label :month %><br>
+    <%= form.text_field :month %>
+  </p>
+  <p>
+    <%= form.label :year %><br>
+    <%= form.text_field :year %>
+  </p>
+   <p>
+    <%= form.label :feature_id %><br>
+    <%= form.text_field :feature_id %>
+  </p>
+  <p>
+    <%= form.label :subscription_id %><br>
+    <%= form.text_field :subscription_id %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+  <% end %>
+ 
+<%= link_to 'Back', usages_path %>

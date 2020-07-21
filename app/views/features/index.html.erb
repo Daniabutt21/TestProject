@@ -1,0 +1,17 @@
+<h1>Listing All Features of <%=@plan.name%> </h1>
+<% @plan.features.each do |feature| %>
+  <p>
+    <strong>Feature Name:</strong>
+    <%= feature.name %><br>
+    <strong>Feature Code:</strong>
+    <%= feature.code %><br>
+    <strong>Feature Unit Price:</strong>
+    <%= feature.unit_price %><br>
+    <strong>Feature Max Unit Limit:</strong>
+    <%= feature.max_unit_limit %><br>
+  </p>
+ 
+<% end %>
+
+<li><%= link_to 'Add New Feature', new_plan_feature_path(@plan.id)  %></li>
+<li><%= link_to 'Back', plan_path(@plan.id) %></li>

@@ -1,0 +1,21 @@
+<%= link_to 'Back to Main Page', buyers_path %>
+<h1> Show Transaction </h1>
+<p>
+  <strong>Payment Date</strong>
+  <%= @transaction.payment_date %>
+</p>
+ 
+<p>
+  <strong>Month:</strong>
+  <%= @transaction.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @transaction.year %>
+</p>
+<p>
+  <strong>Total Charges:</strong>
+  <%=@transaction.total_charges  %>
+</p>
+

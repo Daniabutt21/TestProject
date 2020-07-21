@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Admin View</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<section>
+  <nav>
+    <ul>
+      <li><input type="button" value="Create Plans and Features" /></li>
+      <li><input type="button" value="Launch a call to charge account on Bill Day" /></li>
+      <li><input type="button" value="Make entry in usage table" /></li>
+    </ul>
+  </nav>
+</section>
+<p id="notice"><%= notice %></p>
+<h1>Listing All Users</h1>
+ 
+
+<%= link_to 'New User', new_user_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Bill Day</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.billday %></td>
+      <td><%= link_to 'Show', user_path(user) %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+
+
+</body>
+</html>

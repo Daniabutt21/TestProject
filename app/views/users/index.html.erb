@@ -1,0 +1,4 @@
+<%= link_to 'Sign Out', destroy_user_session_path %>
+<h1> Welcome <%= @user.username %> </h1>
+
+<%= link_to 'View Plans ', user_path(user) %>

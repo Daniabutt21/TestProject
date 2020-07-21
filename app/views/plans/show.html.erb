@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back to Main Page', plans_path %>
+<h1> Show Plan </h1>
+<p>
+  <strong>Name:</strong>
+  <%= @plan.name %>
+</p>
+<p>
+  <strong>Fee:</strong>
+  <%= @plan.fee %>
+</p>
+<%= link_to 'Show All Features', plan_features_path(@plan.id) %>
+<br>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'New Usage', new_usage_path %>
+<h1>Listing All Usages</h1> 
+<table>
+  <tr>
+    <th>Number of units used</th>
+    <th>Month</th>
+    <th>Year</th>
+    <th>Feature ID</th>
+    <th>Subscription ID</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @usages.each do |usage| %>
+    <tr>
+      <td><%= usage.no_of_units_used %></td>
+      <td><%= usage.month %></td>
+      <td><%= usage.year %></td>
+      <td><%= usage.feature_id %></td>
+      <td><%= usage.subscription_id %></td>
+      <td><%= link_to 'Show', usage_path(usage) %></td>
+      <td><%= link_to 'Edit', edit_usage_path(usage) %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+
+<li><%= link_to 'Back', admins_path %></li>
