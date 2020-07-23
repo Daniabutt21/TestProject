@@ -1,26 +1,29 @@
 class Admin < ApplicationRecord
-  def make_transaction
-    @users.each do |user|
+  def self.make_payment
+    User.find_each do |user|
       calculate_payment(user)
+    end
   end
-  
+
+  private
+
   def calculate_payment(user)
-    @subscription = user.subscription.find
-    @plan = Plan.find(params[:@subscription.plan_id])
-    plan_fee = @plan.fee
-    @usage = @subscription.usages.all(@subscription.id)
-    extraunits = @usage.no_of_units_used
-    @feature = Feature.find(params[:@usage.feature_id])
-    featureunits = @feature.mex_unit_limit
-    unitprice = @feature.unit_price
+    subscriptions = user.subscriptions
+    plan = Plan.find(subscriptions.pluck(:plan_id))
+    plan_fee = plan.fee
+    usages = subscription.usages.all
+    extraunits = usages.pluck(:no_of_units_used)
+    features = Feature.find(usages.pluck(:feature_id))
+    featureunits = features.pluck(:max_unit_limit)
+    unitprice = features.pluck(:unit_price)
     if extraunits > featureunits
       eunits = extraunits - featureunits
       feature_overuse = eunits * unitprice
-      plan_fee =plan_fee+feature_overuse
+      plan_fee = plan_fee + feature_overuse
     else
       plan_fee = plan_fee
     end
 
-    Transaction.create( payment_date: user.billday  , total_charges: plan_fee  , month: @usage.month, year: @usage.year, charge_type: "Subscription" )
+    Transaction.create( payment_date: user.billday  , total_charges: plan_fee  , month: usage.month, year: usage.year, charge_type: "Subscription" )
   end
 end

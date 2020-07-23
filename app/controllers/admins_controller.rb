@@ -1,19 +1,22 @@
 class AdminsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
   	@users = User.all
   end
+  
   def show
     @users = User.all
   end
-  def charge_user
-    make_payment
-  end
-
   
+  def charge_user
+    Admin.make_payment
+  end
   
   def edit
     @user = User.find(params[:id])
   end
+  
   def create
     @user = User.new(admin_params)
     if @user.save
@@ -26,10 +29,11 @@ class AdminsController < ApplicationController
       render plain: "Not Successfully Registered"
     end
   end
+  
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to 'devise/session/user'
+   #redirect_to 'devise/session/user'
   end
 
   private

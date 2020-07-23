@@ -1,4 +1,5 @@
 class FeaturesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @plan = Plan.find(params[:plan_id])
   	@features = @plan.features.all

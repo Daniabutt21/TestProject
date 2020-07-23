@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
 	#before_action :user_is_required, only: [:create, :update, :destroy]
-  
+  before_action :authenticate_user!
   def index
     @plans = Plan.all
 	end

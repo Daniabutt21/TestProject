@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_110938) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "usages", force: :cascade do |t|
@@ -89,4 +90,5 @@ ActiveRecord::Schema.define(version: 2020_07_15_110938) do
   add_foreign_key "subscriptions", "users"
   add_foreign_key "usages", "features"
   add_foreign_key "usages", "subscriptions"
+  add_foreign_key "transactions", "users"
 end

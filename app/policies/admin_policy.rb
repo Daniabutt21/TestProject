@@ -1,16 +1,9 @@
 class AdminPolicy < ApplicationPolicy
  
-  def update?
-    return true if user.present? && user == article.user
+  def make_payment
+    user.admin?
   end
- 
-  def destroy?
-    return true if user.present? && user == article.user
-  end
- 
-  def update?
-    user.admin? or not record.published?
-  end
+  
   
   private
  
