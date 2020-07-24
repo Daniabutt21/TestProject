@@ -68,16 +68,11 @@ Dummy data for creating admin and buyer
 - [x] User: Devise authentication with modified models,views and controllers
 - [x] Plan: Create (can add multiple features), read, update, delete
 - [x] Features: Create, read
-- [ ] Authorization: for Plan (only admin can access to new, edit and delte)
+- [x] Authorization: for Plan (only admin can access to new, edit and delte)
 - [x] Subscription: User can subscribe to multiple plans and view and unsubscribe from plans
-- [ ] Emails: Email sent after new subscription
-- [ ] Usage: View Usage table by admin
-- [ ] Add Usage (Usage record added when a user subscribes to plan)
-- [ ] Add Usage for a given month for all active subscriptions
-- [ ] Add Usage when a plan is edited/feature added or removed
-- [ ] Add Transactions table
-- [ ] Validations
-- [ ] Transaction on first time subscription
-- [ ] Make transaction for usage
-- [ ] Allow monthly transactions (for both Usages and subscriptions)
+- [x] Usage: View Usage table by admin
+- [x] Add Usage: Admin can add usage of extra features of every buyer for its subscribed plan.
+- [x] Add Usage for a given month for all active subscriptions
+- [x] Transactions Created: When buyer subscribe a plan 
+- [x] Make transaction for usage
 - [ ] Send Email for monthly usage and subscriptions
