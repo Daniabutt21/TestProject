@@ -2,8 +2,8 @@
 
 My Test Project is a Billing App.
 There are two Main Types of Users. 
-Admin
-User(Buyer)
+-Admin
+-User(Buyer)
 
 I use devise and pundit gem for signup login functionalities.
 
